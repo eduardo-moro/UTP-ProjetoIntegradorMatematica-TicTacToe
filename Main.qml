@@ -36,10 +36,10 @@ Window {
         width: 320
         height: 320
 
-        property string playerChar: "O"
+        property bool isOddPlayer: false
 
         function cellClicked() {
-            playerChar = playerChar === "X" ? "O" : "X"
+            isOddPlayer = isOddPlayer === true ? false : true
             if (mediaLoader.active && mediaLoader.item) {
                 mediaLoader.item.stop()
                 mediaLoader.item.play()
@@ -49,7 +49,7 @@ Window {
         Repeater {
             model: 9
             delegate: Button {
-                playerChar: grid.playerChar
+                isOddPlayer: grid.isOddPlayer
                 onClicked: grid.cellClicked()
                 Layout.fillWidth: true
                 Layout.fillHeight: true

@@ -3,7 +3,7 @@ import QtQuick
 Item {
     id: root
     signal clicked()
-    property string playerChar
+    property bool isOddPlayer
 
     Rectangle {
         id: cell
@@ -34,7 +34,7 @@ Item {
             text: cell.mark
             font.pixelSize: 48
             font.bold: true
-            color: "#e74c3c"
+            color: "#4488ff"
             opacity: cell.mark === "" ? 0 : 1
             scale: cell.mark === "" ? 0.3 : 1
 
@@ -62,7 +62,7 @@ Item {
 
         function buttonClicked() {
             if (cell.mark === "") {
-                cell.mark = root.playerChar
+                cell.mark = root.isOddPlayer ? "X" : "O"
                 root.clicked()
             }
         }
