@@ -70,3 +70,7 @@ Testing/
 .cache/
 
 .idea/
+
+# Qt Creator
+*.pro.user*
+.qtcreator/
