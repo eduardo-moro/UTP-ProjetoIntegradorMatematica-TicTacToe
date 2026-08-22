@@ -42,7 +42,7 @@ Item {
         anchors.top: gameScene.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 50
-        color: "#fabd2f"
+        color: Colors.yellow2
     }
 
     GridLayout {

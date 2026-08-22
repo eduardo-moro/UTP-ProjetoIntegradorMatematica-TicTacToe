@@ -10,16 +10,16 @@ Item {
     property int fs: 28
 
     property string label: "botão"
-    property string c: "#ffffff"
+    property string c: Colors.fg0
 
     Rectangle {
         id: button
         width: root.w
         height: root.h
         anchors.centerIn: parent
-        color: "#3c3836"
+        color: Colors.bg1
         radius: 12
-        border.color: "#504945"
+        border.color: Colors.bg2
 
         scale: mouseArea.pressed ? 0.92 : 1.00
 

@@ -10,7 +10,7 @@ Item {
         id: container
         width: 420
         height: 500
-        color: "#1d2021"
+        color: Colors.bg0_hard
         
         GridLayout {
             id: options
@@ -31,7 +31,7 @@ Item {
                     h: 42
 
                     label: ["versus", "facil", "médio", "dificil", "neo"][index]
-                    c: "#f3f3f3"
+                    c: Colors.fg1
                     fs: 20
 
                     property int value: [GameModeEnum.GameMode.Versus, GameModeEnum.GameMode.Easy, GameModeEnum.GameMode.Medium, GameModeEnum.GameMode.Hard, GameModeEnum.GameMode.Neo][index]

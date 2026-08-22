@@ -1,0 +1,10 @@
+{
+  "qml.languageServer.executable": "/usr/lib/qt6/bin/qmlls",
+  "qml.languageServer.arguments": [],
+  "qml.importPaths": [
+    "${workspaceFolder}/qml"
+  ],
+  "[qml]": {
+    "editor.defaultFormatter": "Qt.qmlls"
+  }
+}

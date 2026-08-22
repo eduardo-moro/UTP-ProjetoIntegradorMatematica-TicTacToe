@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Layouts
-import "tic-tac-toe"
 
 Window {
     id: root
