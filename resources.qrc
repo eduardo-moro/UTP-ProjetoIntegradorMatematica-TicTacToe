@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/qmldir</file>
+        <file>qml/GameButton.qml</file>
+        <file>qml/Main.qml</file>
+        <file>assets/button.wav</file>
+        <file>qml/MediaPlayerComponent.qml</file>
+        <file>qml/GameScene.qml</file>
+        <file>qml/Button.qml</file>
+        <file>qml/StartMenu.qml</file>
+        <file>qml/GameModeEnum.qml</file>
+        <file>qml/Colors.qml</file>
+    </qresource>
+</RCC>

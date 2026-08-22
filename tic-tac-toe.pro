@@ -5,7 +5,7 @@
 TEMPLATE = app
 TARGET = "tic-tac-toe"
 INCLUDEPATH += .
-RESOURCES += qml.qrc
+RESOURCES += resources.qrc
 
 # You can make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -17,4 +17,7 @@ QT += quick
 QT += multimedia
 
 # Input
-SOURCES += main.cpp
+SOURCES += src/main.cpp \
+           src/GameEngine.cpp
+
+HEADERS += src/GameEngine.hpp

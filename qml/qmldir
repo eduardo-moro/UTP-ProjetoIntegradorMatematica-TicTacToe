@@ -1,0 +1,9 @@
+module tic-tac-toe
+Main 1.0 Main.qml
+Button 1.0 Button.qml
+GameButton 1.0 GameButton.qml
+GameModeEnum 1.0 GameModeEnum.qml
+GameScene 1.0 GameScene.qml
+MediaPlayerComponent 1.0 MediaPlayerComponent.qml
+StartMenu 1.0 StartMenu.qml
+singleton Colors 1.0 Colors.qml

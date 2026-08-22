@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QLoggingCategory>
+#include <QQmlContext>
+#include "GameEngine.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -8,7 +10,12 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/Main.qml")));
+    GameEngine gameEngine;
+
+    engine.rootContext()->setContextProperty("gameEngine", &gameEngine);
+
+    const QUrl url(QStringLiteral("qrc:/qml/Main.qml"));
+    engine.load(url);
 
     if (engine.rootObjects().isEmpty())
         return -1;

@@ -1,4 +1,0 @@
-module tic-tac-toe
-Main 1.0 Main.qml
-Button 1.0 content/Button.qml
-MediaPlayerComponent 1.0 content/MediaPlayerComponent.qml

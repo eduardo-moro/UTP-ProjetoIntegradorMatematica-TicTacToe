@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>content/qmldir</file>
-        <file>content/Button.qml</file>
-        <file>Main.qml</file>
-        <file>assets/button.wav</file>
-        <file>content/MediaPlayerComponent.qml</file>
-    </qresource>
-</RCC>

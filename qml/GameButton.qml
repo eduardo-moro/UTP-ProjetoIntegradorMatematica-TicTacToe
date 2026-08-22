@@ -10,9 +10,9 @@ Item {
         width: 100
         height: 100
         anchors.centerIn: parent
-        color: "#2b2b2b"
+        color: "#3c3836"
         radius: 12
-        border.color: "#444444"
+        border.color: "#504945"
 
         property string mark: ""
 
@@ -34,7 +34,8 @@ Item {
             text: cell.mark
             font.pixelSize: 48
             font.bold: true
-            color: "#4488ff"
+            font.family: "Comic Sans MS"
+            color: "#ebdbb2"
             opacity: cell.mark === "" ? 0 : 1
             scale: cell.mark === "" ? 0.3 : 1
 
