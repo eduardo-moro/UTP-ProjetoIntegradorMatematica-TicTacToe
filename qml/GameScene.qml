@@ -5,7 +5,7 @@ Item {
     id: gameScene
     anchors.centerIn: parent
     
-    property int gameMode: GameModeEnum.GameMode.Neo
+    property int gameMode: GameModeEnum.GameMode.Versus
 
     width: 420
     height: 500
@@ -15,7 +15,7 @@ Item {
 
     Loader {
         id: mediaLoader
-        source: "qrc:qml/MediaPlayerComponent.qml"
+        source: "qrc:/qml/MediaPlayerComponent.qml"
     }
 
     Button{
@@ -36,7 +36,7 @@ Item {
     Text {
         id: title
         visible: true
-        text: ["versus", "facil", "médio", "dificil", "neo"][gameMode]
+        text: gameEngine.currentPlayer
         font.family: "Comic Sans MS"
         font.pixelSize: 30
         anchors.top: gameScene.top
@@ -56,41 +56,27 @@ Item {
         width: 320
         height: 320
 
-        property bool isOddPlayer: false
-
-        function checkWin() {
-            var cell0 = children[0].children[0].mark
-            var cell1 = children[1].children[0].mark
-            var cell2 = children[2].children[0].mark
-
-            if (cell0 !== "" && cell0 === cell1 && cell1 === cell2) {
-                return cell0
-            }
-            return null
-        }
-
-        function cellClicked() {
-            isOddPlayer = isOddPlayer === true ? false : true
+        function cellClicked(pos) {
+            gameEngine.makeMove(pos)
+            
             if (mediaLoader.active && mediaLoader.item) {
                 mediaLoader.item.stop()
                 mediaLoader.item.play()
-            }
-
-            var winner = checkWin()
-            if (winner) {
-                title.text = "Player " + winner + " won!"
-
-                children.map((cell) => {
-                    cell.children[0].mark = ""
-                })
             }
         }
 
         Repeater {
             model: 9
             delegate: GameButton {
-                isOddPlayer: grid.isOddPlayer
-                onClicked: grid.cellClicked()
+                value: {
+                    if (gameEngine && gameEngine.boardState && index < gameEngine.boardState.length) {
+                        return gameEngine.boardState[index]
+                    }
+                    return 0
+                }
+                onClicked: grid.cellClicked(index)
+
+                btnIndex: index
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignCenter

@@ -3,7 +3,8 @@ import QtQuick
 Item {
     id: root
     signal clicked()
-    property bool isOddPlayer
+    property int value: 0
+    property int btnIndex;
 
     Rectangle {
         id: cell
@@ -13,8 +14,6 @@ Item {
         color: Colors.bg1
         radius: 12
         border.color: Colors.bg2
-
-        property string mark: ""
 
         scale: mouseArea.pressed ? 0.92 : 1.00
 
@@ -31,13 +30,13 @@ Item {
 
         Text {
             anchors.centerIn: parent
-            text: cell.mark
+            text: root.value === 1 ? "X" : (root.value === 2 ? "O" : "")
             font.pixelSize: 48
             font.bold: true
             font.family: "Comic Sans MS"
             color: Colors.fg1
-            opacity: cell.mark === "" ? 0 : 1
-            scale: cell.mark === "" ? 0.3 : 1
+            opacity: root.value === 0 ? 0 : 1
+            scale: root.value === 0 ? 0.3 : 1
 
             Behavior on opacity {
                 NumberAnimation {
@@ -62,8 +61,7 @@ Item {
         }
 
         function buttonClicked() {
-            if (cell.mark === "") {
-                cell.mark = root.isOddPlayer ? "X" : "O"
+            if (root.value == 0) {
                 root.clicked()
             }
         }

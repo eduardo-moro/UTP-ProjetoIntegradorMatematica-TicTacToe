@@ -18,6 +18,8 @@ QT += multimedia
 
 # Input
 SOURCES += src/main.cpp \
-           src/GameEngine.cpp
+           src/GameEngine.cpp \
+           src/Board.cpp
 
-HEADERS += src/GameEngine.hpp
+HEADERS += src/GameEngine.hpp \
+           src/Board.h
