@@ -16,6 +16,8 @@ Window {
     function startGame (m) {
         mode = m
         menu = false
+
+        gameEngine.newGame()
     }
 
     StartMenu {

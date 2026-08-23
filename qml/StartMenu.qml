@@ -39,7 +39,7 @@ Item {
                     onClicked: root.startGame(value)
 
                     Layout.fillHeight: true
-                    Layout.fillWidth: true    
+                    Layout.fillWidth: true
                 }
             }            
         }
