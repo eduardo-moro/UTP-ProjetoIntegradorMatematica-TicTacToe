@@ -5,6 +5,7 @@ Item {
     signal clicked()
     property int value: 0
     property int btnIndex;
+    property bool highlighted: false
 
     Rectangle {
         id: cell
@@ -13,7 +14,8 @@ Item {
         anchors.centerIn: parent
         color: Colors.bg1
         radius: 12
-        border.color: Colors.bg2
+        border.color: root.highlighted ? Colors.orange2 : Colors.bg2
+        border.width: root.highlighted ? 3 : 1
 
         scale: mouseArea.pressed ? 0.92 : 1.00
 

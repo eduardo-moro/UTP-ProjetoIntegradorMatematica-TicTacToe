@@ -33,6 +33,21 @@ Item {
         onClicked: backToMenu()
     }
 
+    Button{
+        id: restartButton
+        anchors.top: gameScene.top
+        anchors.topMargin: 70
+        anchors.right: parent.right
+        anchors.rightMargin: 70
+
+        w: 42
+        h: 42
+        fs: 12
+
+        label: "↻"
+        onClicked: gameEngine.resetGame()
+    }
+
     Text {
         id: title
         visible: true
@@ -75,8 +90,9 @@ Item {
                     return 0
                 }
                 onClicked: grid.cellClicked(index)
-
                 btnIndex: index
+                enabled: !gameEngine.boardDisabled
+                highlighted: index === gameEngine.oldestPieceIndex
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignCenter

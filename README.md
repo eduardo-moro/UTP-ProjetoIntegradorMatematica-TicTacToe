@@ -13,8 +13,3 @@ Trabalho para a matéria de Projeto integrador de matemática do primeiro semest
 ![Captura de tela de aplicação com fundo cinza, titulo "jogo da velha" em inglês e um grid cinza mais claro de três por três quadrados com algumas das casas marcadas com "X" e "O"](assets/root.png)
 
 </div>
-
-### Tecnologias utilizadas: 
-- C++
-- QT
-- Qmake

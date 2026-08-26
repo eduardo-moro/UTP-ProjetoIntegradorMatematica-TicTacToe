@@ -1,4 +1,4 @@
-#include "Board.h"
+#include "Board.hpp"
 
 /// @brief Verifica a validade de uma célula para escrita
 /// @param pos posição a ser validada `0 ... 8`
@@ -41,4 +41,11 @@ Player Board::getCell(int pos) const
 
 void Board::reset() {
     cells.fill(Player::None);
+}
+
+/// @brief Esvazia uma célula, independentemente do seu valor atual.
+/// @param pos posição
+void Board::clearCell(int pos)
+{
+    cells[pos] = Player::None;
 }

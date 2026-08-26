@@ -17,7 +17,7 @@ Window {
         mode = m
         menu = false
 
-        gameEngine.newGame()
+        gameEngine.setGameMode(m)
     }
 
     StartMenu {
@@ -29,13 +29,13 @@ Window {
 
         Behavior on visible{
             NumberAnimation {
-                duration: 1200
+                duration: 300
             }
         }
 
         Behavior on opacity{
             NumberAnimation {
-                duration: 1000
+                duration: 100
             }
         }
     }
